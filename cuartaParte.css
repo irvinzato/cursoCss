@@ -1,0 +1,196 @@
+/* PSEUDO-ELEMENTOS
+Es un elemento que no es un elemento por que no forman parte del dom
+Para evitar locuras con js al momento de hacerlo responsivo
+Los pseudio elementos que requieren de la etiqueta content no forman parte del dom
+::first-line - block, no funciona en inline para la primer linea
+::first-letter - block, " " lo mismo pero con la primer letra
+::placeholder, ejemplo con el input
+::selection, es para las cosas que seleccionamos
+
+::after , hijos - content(necesario) - funcionan el linea y bloque
+::before , hijos - content(necesario) - funcionan el linea y bloque
+
+EJEMPLOS
+
+.texto {
+    padding: 20px;
+
+}
+
+.texto::first-line {
+    color: violet;
+    font-size: 50px;
+}
+
+form {
+    margin: 100px auto;
+    display: block;
+    background: pink;
+    padding: 40px;
+    width: 50%;
+}
+
+input {
+    padding: 5px;
+    width: 50%;
+}
+
+input::placeholder {
+    color: red;
+}
+
+p {
+    padding: 10px;
+    width: 100%;
+}
+
+p::selection {
+    color: white;
+    background: black;
+}
+
+b {
+    padding: 40px;
+}
+
+b::before {
+    content: "Soy el elemento before ";
+    color: hotpink;
+}
+
+b::after {
+    content: " Soy el pseudo elemento after, no se puede seleccionar";
+    color: green;
+}
+ */
+
+
+* {
+    font-family: 'Comforter', cursive;
+    font-weight: 100px;
+    font-size: 30px;
+}
+
+/*---PSEUDO CLASES---
+De la misma forma que un pseudo elemento pero escuchan un evento
+:hover, escucha el elemento cuando el mouse esta encima
+:link, cambia un link que todavia no visitamos
+:visited, cambia cuando ya fue visitado
+:active, al dejar apretado un boton cambias los estilos
+:focus, se aplica mas a los inputs
+:lang, es una funcion que recibe el idioma para detectarlo
+
+Aqui se puede usar transition y transform pero es algo mas avanzado
+Funcionana para muchas cosas
+
+EJEMPLOS
+
+.caja1 {
+    height: 300px;
+    width: 300px;
+    background: slateblue;
+    transition: background 1s, height 1s, width 1s; Usa las propiedades que quiero ocupar en hover o all 1s
+}
+
+.caja1:hover {
+    background: pink;
+    height: 150px;
+    width: 150px;
+}
+
+.enlace {
+    display: block;
+    padding: 20px;
+    margin: 20px;
+}
+
+.enlace:link { Solo cambiara el color del enlace cuando se visite
+     color: red;
+}
+
+.enlace:visited {
+    color: seagreen;
+}
+
+.cajaActive {
+    margin: 30px;
+    width: 300px;
+    height: 300px;
+    background: pink;
+    transition: all 1s;
+}
+
+.cajaActive:active {
+    width: 700px;
+    height: 700px;
+    background: violet;
+}
+
+.claseInput {
+    margin: 30px;
+    background: gray;
+    transition: background .5s;
+}
+
+.claseInput:focus {
+    background: white;
+}
+
+*/
+
+/*OBJET-FIT
+Fil
+- Contain, es el valor que viene por defecto, hace que las resoluciones de la imagen se ajusten al contenido
+- Cover, la imagen se ajusta al contenido
+- None, le importa un carajo, se queda con el que le conviene, pone las resoluciones originales
+- Scale-Down, se queda con la resolucion mas chica
+*/
+/*OBJET-POSITION 
+- left
+- rigth
+- top
+- button
+- px
+- em
+- %
+- etc
+*/
+
+.divDeImagen {
+    margin: 20px;
+    width: 300px;
+    height: 300px;
+}
+
+.divDeImagen img {
+    width: 100%;
+    height: 100%;
+    border: 3px solid blue;
+    object-fit: cover;
+    object-position: top;
+}
+
+/*CURSOR
+Para cambiar el cursos en ciertos bloques o contenido
+Se pueden consultar todos los cursores en w3schools.com
+*/
+
+.contenedorPointer {
+    margin: 40px;
+    width: 300px;
+    height: 300px;
+    background: red;
+    cursor: pointer;
+}
+
+.contenedorPointer:active {
+    cursor: row-resize;
+    background: violet;
+}
+
+/*COLORES
+Color name
+hexadecimal
+RBG
+RBGA
+*/

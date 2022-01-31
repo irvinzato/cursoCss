@@ -1,0 +1,138 @@
+/*--- RESPONSIVE DESIGNS - MOBILE FIRST ---
+Con responsive design adaptamos un diseño a varias resoluciones o dispositivos como quieras verlo
+Se suele ocupar media query
+mobile fisrt es alreves, de un celular a un escritorio, empezamos con celular y va a computadora
+Se debe usar la etiqueta meta viewport
+
+* {
+    font-family: 'Comforter', cursive;
+    font-weight: 100px;
+    font-size: 30px;
+}
+
+div {
+    width: 45%;
+    display: inline-block;
+    padding: 20px;
+    background: #ddd;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+.cotenedor2 {
+    background: #aaa;
+}
+
+@media only screen and (max-width: 800px){ Resoluciones menores de 800px    
+
+    div {
+        display: block;
+        width: 100%;
+    }
+    h1 {
+        font-size: 30px;
+    }
+}
+*/
+
+* {
+    font-family: sans-serif, cursive;
+    font-weight: 100px;
+}
+
+.nav__responsive-ul {
+    display: none;
+}
+
+.nav {
+    background: gray;
+}
+
+.nav__li {
+    display: inline-block;
+    padding: 20px;
+}
+
+.nav__li:hover a {
+    color: #e32442;
+}
+
+.nav__li a {
+    text-decoration: none;
+    padding: 10px;
+    color: #fff;
+}
+
+.nav__li i {
+    margin-right: 10px;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 801px) {
+    .nav__ul {
+        display: none;
+    }
+
+    .nav{
+        height: 40px;
+        width: 100%;
+    }
+
+    .nav__responsive-ul {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        background: #6bc;
+        margin-top: 45px;
+    }
+
+    .nav__li-container{
+        position: relative;
+        top: -1000px;
+        height: calc(100vh - 45px);
+        background: #35eb5f;
+        width: 40%;
+        transition: all 1s;
+        z-index: 1;
+    }
+
+    .nav__responsive-li {
+        padding: 20px 60px;
+        width: 100%;
+    }
+
+    .nav__responsive-li i {
+        margin-right: 10px;
+        box-sizing: border-box;
+        text-align: center;
+        width: 30px;
+    }
+
+    .nav__responsive-li a {
+        text-decoration: none;
+    }
+
+    .nav__responsive-ul:hover > .nav__li-container {
+        top: 5px;
+    }
+
+}
+
+.nav__responsive-button-container {
+    position: absolute;
+    width: 100%;
+    font-size: 30px;
+    background: #a12442;
+    margin-top: -45px;
+    z-index: 100;
+}
+
+.nav__responsive-button {
+    padding: 10px 20px;
+    text-align: right;
+    width: 100%;
+}

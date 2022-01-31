@@ -1,0 +1,96 @@
+/* -- ESTRUCTURA DE CSS --
+selector {
+    propiedad:valor;
+}   
+*/
+
+/* -- TIPO DE SELECTORES --
+
+- Universal, es con todo *
+* {
+    color: blue;
+}
+
+- De tipo, poner si es un h2, button, p, etc
+h2 {
+    color: yellow;
+}
+
+- Clases, para seleccionar por clases se ocupa un punto "." y el nombre de la clase que se da en el html
+.titulo-h2 {
+    color: red;
+}
+
+- ID, se utiliza # y el nombre del ID, un ID es un identificador UNICO, no se debe dar a mas de un elemento
+#id-element {
+    color: #ab32de;
+}
+
+- Por atributo, se ocupan [nombre="nombre dado"]  
+[atributo="sii"] {
+    color: #d243d2;
+}
+
+- Descendiente, se puede hacer por clase o de cualquier modo pero primero se especifica el elemto donde esta dentro
+por ejemplo "h2 p" o por clase ".claseh2 p span" etc
+h2 p {
+    color: #b23421;
+}
+
+- Pseudo clases, en un evento se genera una seleccion, se ocupa :hover y se puede convinar con descendiente
+p:hover {
+    color: #c23525;
+}
+
+*/
+
+/* -- TEORIA DE LA ESPECIFIDAD -- IMPORTANTE COMPRENDER LA LOGICA
+La cascada funciona cuando son las mismas gerarquias, el nivel de gerarquia rompe la cascada, alli influye el mas importante
+Si estan en el mismo nivel de gerarquia sucede la cascada 
+Gerarquia ocupada: El 1 le gana a todo...
+ 1.- !important, se usa dentro de las {}  
+ 2.- estilos en linea, un estilo en linea se ocupa en el html como style=""
+ 3.- identificadores
+ 4.- clases, pseudo clases, atributos
+ 5.- elementos, pseudo elementos
+*/
+
+/* -- METODOLOGIA BEM --
+Consiste en evitar los conflictos mediante clases, se ocupan dos guiones bajos por secciones y los guines medios para
+marcar que es un objeto diferente del resto
+
+*/
+
+.contact-form__input--active {
+    color: red;
+}
+
+/* --- TEORIA DE MEDIDAS ---
+Para ajustar a cualquier dispositivo
+1em = 16px, el em es igual al valor que le demos a la caja contenedora, se herada
+funciona para cualquier propiedad que trabaje con unidades de medida
+vw y vh 
+*/
+
+* { /* ESTO ES PARA SACAR EL VALOR QUE TIENE POR DEFECTO EL NAVEGADOR */
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+.contact-form {
+    font-size: 20px;
+    /*background-color: #000;
+    width: 50vw;  Es para el ancho de la pantalla view widht 
+    height: 50vh;  Es para el largo de la pantalla view height */
+}
+
+.contact-form__h2{
+    font-size: 1em;
+    font-family: 'Comforter', cursive; /*Si no toma la primera, esta la otra */
+    color: red;
+    line-height: 2  ; /*Line height nace del centro de la letra, se divide en dos, ocupa arriba y abajo la mitad del valor dado */
+    font-weight: 600; /*Es el grueso de la letra, depende la tipografia de la letra */
+    font-stretch: normal; /*No tan util, igual quel variant */
+    font-variant: small-caps;
+}

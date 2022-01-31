@@ -1,0 +1,61 @@
+/*FLEX BOX
+El termino viene de cajas flexibles
+Requiere de dos cosas, flex container y flex item
+Tiene dos ejes, main axis como eje "x" y croos axis eje "y"
+Consultar imagen
+Los flex items son los que estan dentro del contenedor display = flex
+Los flex items son solamente los hijos directos, si dentro de ese contenedor tenemos otro div con otros elemetos, ellos no son hijos directos
+Para modificar a los items se debe afectar el CONTENEDOR principal, este modifica a todos los hijos
+--- PROPIEDADES ---
+Flex-Direction
+Flex-Wap: No-wrap - Wrap - Wrap-reverse;
+Flex-Flow: flex-direction flex-wrap; es para abreviar
+Justify-Content: center, space-arround, space-between, space-evenly (MAIN AXIS) Para centrar el contenido
+Aling-item: flex-start, center, flex-end, stretch, baseline (CROSS AXIS) Esto sirve para ajustar una sola linea
+Align-content, esta sirve para ajustar todas las lineas
+*/
+
+* {
+    font-family: sans-serif, cursive;
+    font-weight: 100px;
+}
+
+.contenedorFlex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 100vh; /*aL parecer con esto funciona align-items*/
+    align-items: flex-start;
+}
+
+.itemFlex {
+    background: #48e;
+    color: #fff;
+    padding: 15px;
+    margin: 10px;
+    height: 400px;
+    width: 400px;
+
+}
+
+.green {
+    background: green;
+}
+
+.yellow {
+    background: gray;
+}
+
+/*--- PROPIEDADES DE LOS ITEMS---
+Align-self (CROOS AXIS)
+En lugar de darselas al contenedor se las damos a los items
+
+--- FUNCIONAMIENTO DEL MARGIN---
+Margin-(direction): auto -> margin= contenedor - tamaño de la caja en el eje en el que corre (direction)
+
+Flex-grow: (Espacio asignado + sobrante / grows) (Main Axis)
+
+Flex - shrink: Espacio
+
+Flex - basis: Medici
+*/

@@ -1,0 +1,78 @@
+/* -- NORMALIZE --
+El navegador pone todos los valores por defecto, para esto se ocupa el NORMALIZE,
+para reiniciar todos los valores por defecto
+*/
+
+/* --- TEORIA DE CAJAS ---
+EN LINEA Y EN BLOQUE
+- En bloque es muy importante, Siempre el ancho es el total de la caja que lo contiene.
+hay elementos que ocupan todo el ancho como el h2, el b ocupa menos ancho pero se puede cambiar
+Hay elementos en bloques y elementos en linea
+A los elementos en bloque se les puede dar ciertas propiedades que a los de linea no, como heigt y widht
+*/
+
+/*
+h2 {
+    display: inline; Esto es para cambiar las propiedades de bloque a linea
+    height: 100; Esto no funcionaria ya por que ahora es un elemento en linea
+}
+*/
+
+/* --- PADDING Y MARGIN --
+- Padding es la distancia que hay entre el borde de la caja y el texto, hay 4 paddings en la caja
+- Margin es la ditancia que hay entre las dos cajas, separacion entre cajas, funciona muy parecido al padding
+*/
+
+/* --- BOX MODEL ---
+El box model esta conformado por las siguientes propiedasdes, de ese modo es su jerarquia
+1- content, el content es el texto, con line-height se modifica
+2- padding
+3- border
+4- margin
+*/
+
+/*
+h2 {
+    background-color: #a22;
+    display: inline-block;
+    padding: 10px 50px; Podemos hacer esto para no poner uno por uno, es como las mancellas del reloj, empieza arriba
+    height: 100px; Este valor se le suma lo del padding, es el resultado final
+    width: 300px;
+    box-sizing: border-box;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+*/
+* { 
+    font-family: 'Comforter', cursive;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+h2 {
+    background-color: #a22;
+    display: inline-block;
+    padding: 100px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 10px;
+    border-radius: 10px;
+    border: 10px double rgb(0, 255, 55);
+    box-shadow: 20px 30px 15px 0px #000; /*eje x, eje y, tamaño del desenfoque, borde y color*/
+    text-shadow: 2px 2px 9px #fff; /*lo mismo pero con la letra y no tiene el parametro de relleno */
+    transform: rotate(-45deg);
+}
+
+/*
+.contact-form {
+    font-size: 25px;
+}
+
+.contact-form__h2{
+    font-size: 2em;
+    color: red;
+}
+*/
