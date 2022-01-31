@@ -47,15 +47,19 @@ Align-content, esta sirve para ajustar todas las lineas
 }
 
 /*--- PROPIEDADES DE LOS ITEMS---
-Align-self (CROOS AXIS)
+Align-self: (CROOS AXIS)
 En lugar de darselas al contenedor se las damos a los items
-
+Las siguientes son las propiedades que se le puede dar a los items
 --- FUNCIONAMIENTO DEL MARGIN---
 Margin-(direction): auto -> margin= contenedor - tamaño de la caja en el eje en el que corre (direction)
 
 Flex-grow: (Espacio asignado + sobrante / grows) (Main Axis)
 
-Flex - shrink: Espacio
+Flex-shrink: Espacio que "cede" (MAIN AXIS)
 
-Flex - basis: Medici
+Flex-basis: Medicion antes de encogerse (En auto(defect value), agarra el width, y sino tiene mas prioridad) (MAIN AXIS)
+
+Flex: flex-grow, flex-shrink, flex-basis (al menos el primer parametro obligatorio)
+
+Order: (Como el z index, pero en el eje en el que apunta el main axis)
 */
