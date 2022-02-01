@@ -18,6 +18,7 @@ Align-content, esta sirve para ajustar todas las lineas
 * {
     font-family: sans-serif, cursive;
     font-weight: 100px;
+    flex-wrap: wrap; /*Para que bajen los contenedores, si esta propiedad hacemos chica la pantalla y no bajaran*/
 }
 
 .contenedorFlex {
@@ -32,14 +33,17 @@ Align-content, esta sirve para ajustar todas las lineas
     background: #48e;
     color: #fff;
     padding: 15px;
-    margin: 10px;
+    /*margin: 10px;*/
     height: 400px;
-    width: 400px;
-
+    width: 300px;
+    /*margin-top: auto;*/
+    flex-grow: 1;
 }
 
 .green {
     background: green;
+    flex-basis: 400px;
+    flex-shrink: 2;
 }
 
 .yellow {
@@ -52,10 +56,22 @@ En lugar de darselas al contenedor se las damos a los items
 
 --- FUNCIONAMIENTO DEL MARGIN---
 Margin-(direction): auto -> margin= contenedor - tamaño de la caja en el eje en el que corre (direction)
+Margin en Flex funciona tomando todo el margen primero y al final la caja
+margin-top: auto; posicionaria la caja hasta abajo por que primero toma el top y al final la caja, lo mismo con las otras
 
-Flex-grow: (Espacio asignado + sobrante / grows) (Main Axis)
+Flex-grow: (Espacio asignado + sobrante / grows) (Main Axis) el espacio que sobra se le da a las o a la caja
+segun el numero que le damos son los pedasos que abra, se le puede dar a varios items
 
-Flex - shrink: Espacio
+Flex-shrink: Espacio que "cede" (Main Axis)
+Va dar mas espacio a las demas cajas, si ponemos 2 va a dar el doble de espacio que el que dan las demas
 
-Flex - basis: Medici
+Flex-basis: Mediciion antes de encogerse (En auto(defect value), agarra el width,
+y si no tiene mas prioridad) (Main Axis)
+Es como el width pero mas importante para flex
+
+Flex - flex-grow, flex-shrink, flex-basis (al menos el primer parametro obligatorio)
+Es agrupar las tres anteriores
+
+Order: Como el z index, pero con el eje en el que apunta el Main Axis
+El que tenga el valor mas grande va a estar al final
 */
