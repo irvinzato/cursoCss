@@ -1,1 +1,63 @@
 /*MINUTO DE VIDEO 5:40:00, TAMBIEN PUEDE MANDAR UN MAIL AL CORREO CON FORMULARIO*/
+
+* {
+    font-family: fantasy;
+    font-weight: 100px;
+}
+
+.contenedor-principal-flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /*Para que se deslice al ser responsive*/
+    background: rgb(175, 175, 175);
+    margin: 50px 30px;
+    border: 10px solid rgba(255, 255, 255, 0.486);
+    outline: 5px solid rgba(0, 0, 0, 0.486);
+}
+
+.formulario {
+    min-width: 300px;
+    flex: 2;
+    text-align: center;
+    padding: 30px 20px;
+    order: 5;
+}
+
+.formulario__input {
+    width: 80%;
+    padding: 20px;
+    margin: 5px;
+    border: none;
+}
+
+.formulario__input:focus {
+    background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.486));
+    outline: none;
+    border-bottom: 2px solid rgb(82, 82, 82);
+}
+
+.formulario__section textarea {
+    min-height: 130px;
+    resize: none;
+}
+
+.formulario__section button:hover {
+    background: green;
+    border-bottom: 2px solid rgb(0, 41, 9);
+}
+
+.formulario__section button:active {
+    background: linear-gradient(to top, rgb(0, 122, 10), rgba(0, 75, 19, 0.486));
+}
+
+
+.formulario-img{
+    display: flex;
+    padding: 10px 20px;
+    flex: 200px;
+    order: 2;
+}
+
+.formulario-img img {
+    min-width: 150px;
+}
