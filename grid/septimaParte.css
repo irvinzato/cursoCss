@@ -1,0 +1,116 @@
+/* --- GRID ---     NOTA- Grid-container es nuestra clase contenedor-Grid
+--- CONCEPTOS BASICOS ---
+grid funciona atraves de celdas
+
+grid container es como el flex container, se divide por grillas
+grid item, solo hijos directos, cada uno de los elementos que formen parte del container
+grid cell, las celdas 
+grid tracks (colum y row), numero de columnas y filas
+grid area, areas que seleccionamos, las areas las definimos nosotros pero que sea mas de una celda y consecutivas
+grid line (column line y row line), cantidad de lineas en columbas y filas
+
+   --- PROPIEDADES ---
+Se ocupan para poder realizar las columnas y filas ya que display:grid; solo hace una columna y fila por item
+grid-template-rows (Grid-container) podemos darle por unidad de medidas y usar 1fr para ocupar el espacio sobrante (asi es mas dinamico)
+grid-template-columns (Grid-container) repeat(1,150px) 1fr; asi funciona mejor para no dar uno por uno
+                                       repeat("numero de filas o columnas",1fr)
+
+grid-row-gap (Grid-container) es como una especie de margin pero entre celdas
+grid-column-gap (Grid-container)
+grid-gap: row column (Grid-container) separa entre ellas pero no de los bordes
+
+grid-row-start (Grid-item) Es para empezar a unir celdas todas estas propiedades
+grid-row-end (Grid-item)
+grid-column-start (Grid-item)
+grid-column-end (Grid-item)
+- grid-row (Grid-item)  tambien se puede usar span "numero" ocupas el numero de filas o columnas indicadas 
+- grid-column (Grid-item) 1 / "span" 3 empieza en la linea uno y termina en la 3
+
+unidades "auto" y fr
+repeat(cantidad,tamaño/s)
+
+ --- GRID IMPLICITO Y EXPLICITO ---
+Si hay una celda que sobra se va a crear con otras propiedades, esto es Grid implicito
+
+3 nuevas propiedades del grid implicito
+grid-auto-rows (Igual que el template) Funcionan igual que el template pero sirven para programar lo IMPLICITO
+grid-auto-columns (Igual que el template) Tambien se ponene en el container, con estas no funciona el repeat
+grid-auto-flow: row (default), column y dense, Para decidir como queremos que se comporte lo implicito, COMO COLUMNA O FILA
+                Con dense se rellenan los campos vacios(Se re acomoda)
+
+ --- GRID DINAMICO ---
+Es cuando se pone uno abajo del otro, se re acomoda o cosas asi, se trabaja con estructuras dinamicas
+minmax() - para decir cual es el minimo y maximo que debe medir 
+min-content - es el minimo del contenido que tenga
+max-content - ""
+
+cantidad:
+
+auto-fill - ejemplo repeat(auto-fill, minmax(100px,1fr)); se ve mejor con columnas dinamicas, se usa mucho para hacer galerias
+auto-fit - con este escala todos los elementos
+
+ --- ALINEACION Y CONTROL DE FLUJO --- Hay dos tipos de alineacion, las que son en general de todos los items y la particular por elemento
+Diferencia con flex: la alineacion es dentro de cada celda y no alieacion total del flex container
+cada celda seria un "flex-container"
+
+ --- (Propiedades del grid-container) ---
+
+justify-items (horizontalmente) columna para contenido que tienen dentro
+align-items (verticalmente) fila
+
+stretch(default) - start - center - end
+
+place-items: align-items justify-items
+
+ --- ALINEACION DE FILAS Y COLUMNAS ---
+justify-content (horizontalmente) columna
+align-content (verticalmente) fila
+
+stretch(default) - start - center - end
+mas las de flex: space-arround, space-between, space-evenly
+
+ --- APLICADO AL GRID ITEM ---
+ align-self   
+ justify-self  
+ place-self: align-self justify-self    es el abreviado
+
+ stretch(default) - start- center - end
+
+ order (igual que en flex) es como un z index el que pesa mas y menos
+*/
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 100;
+}
+
+body {
+    background: radial-gradient(circle,#fff,#bbb);
+    padding: 20px;
+}
+
+.contenedor-Grid {
+    display: grid;
+    background: #f2f;
+    grid-template-rows: repeat(3, minmax(150px,200px));
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    border: 2px solid red;
+    grid-auto-rows: 1fr; /*Funcionana para los sobrantes en la cuadricula*/
+    grid-auto-columns: 1fr;
+    /*grid-gap: 20px;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    Para alienar deben tener medias preferentemente, en lugar de 1fr y sin auto fill para poder moverse*/
+}
+
+.grid-item {
+    background: #a3e;
+    border: 2px solid black;
+   
+}
+
+/*.grid-item:nth-child(2) { Con esto podemos seleccionar el numero del hijo que querramos
+    
+}*/

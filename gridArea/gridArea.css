@@ -1,0 +1,36 @@
+/* --- SEGUNDA PARTE DE GRID --- 7:22:00
+--- AREAS EN GRID ---
+Lo mejor es tener minimo 2 celdas juntas, si no no tiene mucho sentido
+
+*/
+
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 100;
+}
+
+body {
+    background: radial-gradient(circle,#fff,#bbb);
+}
+
+.grid-container {
+    background: #444;
+    margin: 10px;
+    display: grid;
+}
+
+.grid-header {
+    background: #4f9;
+}
+
+.grid-main {
+    background: #f96;
+}
+
+.grid-aside {
+    background: #96f;
+}
+
+.grid-footer {
+    background: #888;
+}

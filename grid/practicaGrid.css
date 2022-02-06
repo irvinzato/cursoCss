@@ -1,0 +1,87 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+}
+
+.contenedor-Grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+    grid-auto-rows: 200px; /*Tamaño de las filas*/
+    grid-gap: 10px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+img:first-child {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+img:nth-child(6) {
+    grid-column: 2 / 4;
+    grid-row: 3 / 3;
+}
+
+img:nth-child(18) {
+    grid-row: span 2; /*De esta manera la foto ocupara dos filas a lo largo, util para imagenes verticales*/
+}
+
+/*EJEMPLO DE EFECTO QUE SE PUEDE HACER CON JS*/
+
+.ejemploImagen:hover > .efecto{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #bbb;
+    opacity: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ejemploImagen {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    position: relative;
+    overflow: hidden;
+}
+
+b {
+    display: inline-block;
+    transition: opacity 0.3s;
+    opacity: 0; 
+}
+
+b:nth-child(1) {
+    position: relative;
+    top: 10%;
+}
+
+b:nth-child(2) {
+    position: relative;
+    top: -10%;
+}
+
+.ejemploImagen:hover > .efecto b {
+    margin: auto;
+    color: #fff;
+    font-size: 70px;
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+b:hover {
+    color: #999;
+}
+
+img:first-child:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+}
