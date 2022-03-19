@@ -2,6 +2,13 @@
 --- AREAS EN GRID ---
 Lo mejor es tener minimo 2 celdas juntas, si no no tiene mucho sentido
 
+--- Se le puede dar nombres a las lineas ---
+entre corchetes se hace
+
+--- SHORTHAND --- NO RECOMENDADO
+esto abrevia las propiedades pero no vale la pena aveces
+grid-template: row/columns (grid-container)
+grid-template: area unidad
 */
 
 * {
@@ -17,20 +24,37 @@ body {
     background: #444;
     margin: 10px;
     display: grid;
+    grid-template-areas: "header header header"  /*Se dividen columnas y filas con nombres, se estructura la pagina web con nombres pero funciona igual, son cuadriculas en area*/
+                        "aside main main"        /*Lo ideas seria darle a la fila del header y footer medidas fijas*/
+                        "aside main main" 
+                        "aside main main" 
+                        "aside main main"
+                        "footer footer footer";
+    grid-template-rows: repeat(auto-fill,1fr);   /*Para darle medidas a las filas*/
+    height: 90vh;
+    border: 2px solid #000;
+}
+
+.grid-item {
+   
 }
 
 .grid-header {
     background: #4f9;
+    grid-area: header;
 }
 
 .grid-main {
     background: #f96;
+    grid-area: main;
 }
 
 .grid-aside {
     background: #96f;
+    grid-area: aside;
 }
 
 .grid-footer {
     background: #888;
+    grid-area: footer;
 }
